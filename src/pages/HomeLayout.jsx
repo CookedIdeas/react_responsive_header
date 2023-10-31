@@ -4,11 +4,13 @@ import Footer from '../components/Footer';
 
 const HomeLayout = () => {
   return (
-    <main className="min-h-screen w-screen relative">
+    <div className="min-h-screen w-screen relative">
       <Header />
-      <Outlet />
+      <main className="my-8 mx-4 sm:mx-6 md:mx-8">
+        <Outlet />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 export default HomeLayout;
