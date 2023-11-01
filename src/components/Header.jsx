@@ -7,10 +7,6 @@ import NavHeader from './header/NavHeader';
 const Header = () => {
   const [isNavHeaderOpen, setIsNavHeaderOpen] = useState(false);
 
-  const toggleNavHeader = (openIt) => {
-    openIt ? setIsNavHeaderOpen(true) : setIsNavHeaderOpen(false);
-  };
-
   return (
     <div>
       <div className="top-0 h-16 sm:h-24 w-full flex items-center transition duration-300 hover:shadow">

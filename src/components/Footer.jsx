@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="grid place-items-center bg-slate-200 absolute bottom-0 py-5 w-full">
+    <footer className="grid place-items-center bg-backgroundColor-primary absolute bottom-0 p-5 w-full">
       <div className="flex flex-col items-center gap-2">
         <div className="text-center">
           Made with{' '}
@@ -112,7 +112,7 @@ const Footer = () => {
             Styled Components
           </a>
         </div>
-        <span>
+        <span className="text-center">
           by{' '}
           <a
             href="https://github.com/CookedIdeas"
@@ -123,7 +123,7 @@ const Footer = () => {
             Gabriel Gourcerol/Cooked Ideas
           </a>
         </span>
-        <span>
+        <span className="text-center">
           &#169; {new Date().getFullYear()} No copyright here actually ;)
         </span>
       </div>
