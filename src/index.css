@@ -72,18 +72,24 @@ button:focus-visible {
   }
 }
 
+/* === TITLES === */
+
+h1 {
+  @apply text-primary uppercase font-semibold text-3xl;
+}
+
 /* === LINKS === */
 
 a {
-  @apply text-green-700 transition-colors font-normal;
+  @apply text-accent transition-colors font-normal;
 }
 
 a:hover {
-  @apply text-green-500;
+  @apply text-accent;
 }
 
 .active {
-  @apply text-green-700 font-semibold;
+  @apply font-semibold;
 }
 
 a:after {
