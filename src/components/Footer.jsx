@@ -14,7 +14,6 @@ const Footer = () => {
               className="inline pr-1 pb-1 w-5 h-5"
               viewBox="0 0 410 404"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M399.641 59.5246L215.643 388.545C211.844 395.338 202.084 395.378 198.228 388.618L10.5817 59.5563C6.38087 52.1896 12.6802 43.2665 21.0281 44.7586L205.223 77.6824C206.398 77.8924 207.601 77.8904 208.776 77.6763L389.119 44.8058C397.439 43.2894 403.768 52.1434 399.641 59.5246Z"
@@ -33,8 +32,8 @@ const Footer = () => {
                   y2="344"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#41D1FF" />
-                  <stop offset="1" stop-color="#BD34FE" />
+                  <stop stopColor="#41D1FF" />
+                  <stop offset="1" stopColor="#BD34FE" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear"
@@ -44,13 +43,13 @@ const Footer = () => {
                   y2="292.989"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FFEA83" />
-                  <stop offset="0.0833333" stop-color="#FFDD35" />
-                  <stop offset="1" stop-color="#FFA800" />
+                  <stop stopColor="#FFEA83" />
+                  <stop offset="0.0833333" stopColor="#FFDD35" />
+                  <stop offset="1" stopColor="#FFA800" />
                 </linearGradient>
               </defs>
             </svg>
-            Vite
+            Vite and react
           </a>
           ,{' '}
           {
@@ -62,7 +61,6 @@ const Footer = () => {
             >
               <svg
                 viewBox="0 0 1000 1000"
-                xmlns="http://www.w3.org/2000/svg"
                 className="fill-[#07B6D5] inline pr-1 pb-1 w-5 h-5"
               >
                 <path d="M489.5 226.499C328 231.632 280 346.999 269 409.499C283.333 386.332 328.5 335.5 395 335.5C472.5 335.5 531.5 422 567.5 449C611.237 481.803 699.123 525.115 814.5 490C906.5 462 949.167 364.332 958.5 317.999C914 378.499 846.5 414.838 763 371.999C705.5 342.499 662.5 221 489.5 226.499Z" />
@@ -79,24 +77,19 @@ const Footer = () => {
             className="relative effect-underline"
           >
             <div className="inline pr-1 pb-1 w-5 h-5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 318 318"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                className="inline pr-1 pb-1 w-5 h-5"
-              >
+              <svg viewBox="0 0 318 318" className="inline pr-1 pb-1 w-5 h-5">
                 <defs>
                   <path id="a" d="M0 0h318v318H0z" />
                   <mask id="b" width="318" height="318" x="0" y="0" fill="#fff">
-                    <use xlink:href="#a" />
+                    <use xlinkHref="#a" />
                   </mask>
                 </defs>
-                <g fill="none" fill-rule="evenodd">
+                <g fill="none" fillRule="evenodd">
                   <use
                     stroke="#4A4A4A"
-                    stroke-width="8"
+                    strokeWidth="8"
                     mask="url(#b)"
-                    xlink:href="#a"
+                    xlinkHref="#a"
                   />
                   <path
                     fill="#4A4A4A"
@@ -104,9 +97,9 @@ const Footer = () => {
                   />
                   <text
                     fill="#000"
-                    font-family="AppleColorEmoji, Apple Color Emoji"
-                    font-size="100"
-                    letter-spacing=".5"
+                    fontFamily="AppleColorEmoji, Apple Color Emoji"
+                    fontSize="100"
+                    letterSpacing=".5"
                     transform="translate(38 44)"
                   >
                     <tspan x="70" y="100">
