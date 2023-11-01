@@ -24,7 +24,7 @@ const Header = () => {
         {/* LARGE SCREEN → NAVIGATION LINKS DISPLAYED AT CENTER */}
         <div className="hidden sm:grid w-full place-items-center relative ">
           <nav className="flex justify-around items-center w-1/2">
-            {navlinks.map((link, index) => {
+            {navlinks.map((link) => {
               const { id, text, url } = link;
               return (
                 <NavLink
@@ -34,27 +34,17 @@ const Header = () => {
                 >
                   {text}
                 </NavLink>
-                // <div
-                //   key={id}
-                //   className=" flex justify-center items-center gap-[1%]"
-                // >
-
-                //   {/* <div className="grid place-items-center"> */}
-                //  {/* </div> */}
-                //  {/* display a | between links (after every link except last one) */}
-                //  {/* {index < navlinks.length - 1 && (
-                //      <span className="font-thin mr-[5%] text-accent">|</span>
-                //   )} */}
-                // </div>
               );
             })}
           </nav>
-          {/* <div className="absolute bottom-0 w-1/2 h-[2px] bg-gradient-to-r from-white via-neutral-500 to-white"></div> */}
         </div>
       </div>
       {/* SMALL SCREEN → NAV HEADER DISPLAY WHEN isNavHeaderOpen === true */}
       <div className="flex sm:hidden">
-        <NavHeader isNavHeaderOpen={isNavHeaderOpen} />
+        <NavHeader
+          isNavHeaderOpen={isNavHeaderOpen}
+          setIsNavHeaderOpen={setIsNavHeaderOpen}
+        />
       </div>
     </div>
   );

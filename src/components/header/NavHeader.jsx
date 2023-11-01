@@ -2,6 +2,12 @@ import { NavLink } from 'react-router-dom';
 import { navlinks } from '../../assets/navlinks';
 
 const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
+  const handleNavheaderLinkClick = () => {
+    setTimeout(() => {
+      setIsNavHeaderOpen(false);
+    }, 300);
+  };
+
   return (
     <div
       className={`absolute bg-backgroundColor-primary w-full flex flex-col gap-2 overflow-hidden transition-all duration-500 ${
@@ -9,7 +15,7 @@ const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
       }`}
     >
       {' '}
-      {navlinks.map((link, index) => {
+      {navlinks.map((link) => {
         const { id, text, url } = link;
         return (
           <div key={id} className="flex justify-center items-center gap-[1%]">
@@ -17,7 +23,7 @@ const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
               <NavLink
                 to={url}
                 className="capitalize relative font-normal"
-                onClick={() => setIsNavHeaderOpen(false)}
+                onClick={handleNavheaderLinkClick}
               >
                 {text}
               </NavLink>
