@@ -10,8 +10,10 @@ const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
 
   return (
     <div
-      className={`absolute bg-backgroundColor-primary w-full flex flex-col gap-2 overflow-hidden transition-all duration-500 ${
-        isNavHeaderOpen ? 'max-h-40 shadow-bottomShadow py-6' : 'max-h-0 py-0'
+      className={`absolute bg-backgroundColor-primary w-full flex flex-col gap-2 overflow-hidden transition-all duration-500  ${
+        isNavHeaderOpen
+          ? 'max-h-40 shadow-[0_2px_2px_-2px_gray] py-6 bg-backgroundColor-secondary'
+          : 'max-h-0 py-0'
       }`}
     >
       {' '}
@@ -22,7 +24,7 @@ const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
             <nav className="grid place-items-center">
               <NavLink
                 to={url}
-                className="capitalize relative font-normal"
+                className="capitalize relative font-normal text-xl"
                 onClick={handleNavheaderLinkClick}
               >
                 {text}

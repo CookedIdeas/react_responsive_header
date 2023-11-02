@@ -1,15 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { navlinks } from '../assets/navlinks';
 import BurgerMenu from './header/BurgerMenu';
-import { useState } from 'react';
+
 import NavHeader from './header/NavHeader';
 
-const Header = () => {
-  const [isNavHeaderOpen, setIsNavHeaderOpen] = useState(false);
-
+const Header = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
   return (
-    <div>
-      <div className="top-0 h-16 sm:h-24 w-full flex items-center transition duration-300 hover:shadow">
+    <header className="z-10">
+      <div
+        className={`top-0 h-16 sm:h-24 w-full flex items-center transition duration-500 hover:shadow bg-backgroundColor-primary ${
+          isNavHeaderOpen && 'bg-backgroundColor-secondary'
+        }`}
+      >
         {/* SMALL SCREEN → BURGER MENU TO THE RIGHT */}
         <div className="flex sm:hidden w-full justify-end mr-6">
           <BurgerMenu
@@ -42,7 +44,7 @@ const Header = () => {
           setIsNavHeaderOpen={setIsNavHeaderOpen}
         />
       </div>
-    </div>
+    </header>
   );
 };
 export default Header;
