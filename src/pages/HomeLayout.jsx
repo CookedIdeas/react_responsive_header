@@ -4,18 +4,24 @@ import Footer from '../components/Footer';
 import { useEffect, useRef, useState } from 'react';
 
 const HomeLayout = () => {
-  const mainContent = useRef(null);
-
+  // state for navheader → shared to Header and its children components
   const [isNavHeaderOpen, setIsNavHeaderOpen] = useState(false);
 
-  const handleMainContentClick = (e) => {
+  // feature : close navheader on main content click
+  // create a ref on main container
+  // add event listener to this ref
+  // on click → handleMainContentClick → close navheader
+
+  const mainContent = useRef(null);
+
+  const handleMainContentClick = (isNavHeaderOpen) => {
     if (isNavHeaderOpen) {
       setIsNavHeaderOpen(false);
     }
   };
 
   useEffect(() => {
-    mainContent.current.addEventListener('click', handleMainContentClick);
+    mainContent.current.addEventListener('click', () => handleMainContentClick);
     return () => {
       mainContent.current.removeEventListener('click', handleMainContentClick);
     };
