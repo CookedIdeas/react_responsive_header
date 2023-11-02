@@ -1,17 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { navlinks } from '../../assets/navlinks';
 
-const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
+const DropDownMenu = ({ isNavMenuOpen, setIsNavMenuOpen }) => {
   const handleNavheaderLinkClick = () => {
     setTimeout(() => {
-      setIsNavHeaderOpen(false);
+      setIsNavMenuOpen(false);
     }, 300);
   };
 
   return (
     <div
       className={`absolute bg-backgroundColor-primary w-full flex flex-col gap-2 overflow-hidden transition-all duration-500  ${
-        isNavHeaderOpen
+        isNavMenuOpen
           ? 'max-h-40 shadow-[0_2px_2px_-2px_gray] py-6 bg-backgroundColor-secondary'
           : 'max-h-0 py-0'
       }`}
@@ -40,4 +40,4 @@ const NavHeader = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
     </div>
   );
 };
-export default NavHeader;
+export default DropDownMenu;

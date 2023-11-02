@@ -3,9 +3,9 @@ import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 import { useEffect, useRef, useState } from 'react';
 
-const HomeLayout = () => {
+const Layout = () => {
   // state for navheader → shared to Header and its children components
-  const [isNavHeaderOpen, setIsNavHeaderOpen] = useState(false);
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   // feature : close navheader on main content click and on scroll
   // create a ref on main container
@@ -20,15 +20,15 @@ const HomeLayout = () => {
     if (
       mainContent.current &&
       mainContent.current.contains(clickedElement) &&
-      isNavHeaderOpen
+      isNavMenuOpen
     ) {
-      setIsNavHeaderOpen(false);
+      setIsNavMenuOpen(false);
     }
   };
 
   const handleMainContentScroll = () => {
-    if (mainContent.current && isNavHeaderOpen) {
-      setIsNavHeaderOpen(false);
+    if (mainContent.current && isNavMenuOpen) {
+      setIsNavMenuOpen(false);
     }
   };
 
@@ -56,8 +56,8 @@ const HomeLayout = () => {
   return (
     <div className="min-h-screen h-full relative bg-backgroundColor-primary">
       <Header
-        isNavHeaderOpen={isNavHeaderOpen}
-        setIsNavHeaderOpen={setIsNavHeaderOpen}
+        isNavMenuOpen={isNavMenuOpen}
+        setIsNavMenuOpen={setIsNavMenuOpen}
       />
       <main ref={mainContent} className="my-16 mx-4 sm:mx-6 md:mx-8">
         {/* CHOOSE HEADER CLOSING BEHAVIOR */}
@@ -98,4 +98,4 @@ const HomeLayout = () => {
     </div>
   );
 };
-export default HomeLayout;
+export default Layout;

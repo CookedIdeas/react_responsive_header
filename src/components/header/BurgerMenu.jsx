@@ -1,17 +1,15 @@
 import React from 'react';
 import { styled } from 'styled-components';
 
-const BurgerMenu = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
+const BurgerMenu = ({ isNavMenuOpen, setIsNavMenuOpen }) => {
   return (
     <Wrapper
       className="h-14 w-12 p-2 bg-transparent flex sm:hidden justify-center items-center"
       aria-label={`${
-        isNavHeaderOpen
-          ? 'close the navigation menu'
-          : 'open the navigation menu'
+        isNavMenuOpen ? 'close the navigation menu' : 'open the navigation menu'
       } `}
       alt="burger menu"
-      onClick={() => setIsNavHeaderOpen(!isNavHeaderOpen)}
+      onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
     >
       <svg id="hamburger" className="w-12 h-10">
         <g
@@ -19,7 +17,7 @@ const BurgerMenu = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
           strokeLinecap="round"
           strokeLinejoin="round"
           className={`stroke-accent w-8 h-8 ${
-            isNavHeaderOpen ? 'open' : 'close'
+            isNavMenuOpen ? 'open' : 'close'
           }`}
         >
           <path id="top-line" d="M5,10 L30,10 Z"></path>

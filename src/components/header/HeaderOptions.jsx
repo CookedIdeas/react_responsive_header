@@ -1,4 +1,4 @@
-const HeaderOptions = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
+const HeaderOptions = ({ isNavMenuOpen, setIsNavMenuOpen }) => {
   return (
     <div>
       <input type="checkbox">Close header on click outside of header</input>
