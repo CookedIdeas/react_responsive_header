@@ -7,25 +7,42 @@ const HomeLayout = () => {
   // state for navheader → shared to Header and its children components
   const [isNavHeaderOpen, setIsNavHeaderOpen] = useState(false);
 
-  // feature : close navheader on main content click
+  // feature : close navheader on main content click and on scroll
   // create a ref on main container
-  // add event listener to this ref
-  // on click → handleMainContentClick → close navheader
+  // add event listener to widow
+  // on click → handleMainContentClick → if clicked element is in main div and navheader is open → close navheader
+  // on scroll → handleMainContentScroll → if navheader is open → close navheader
 
   const mainContent = useRef(null);
 
-  const handleMainContentClick = (isNavHeaderOpen) => {
-    if (isNavHeaderOpen) {
+  const handleMainContentClick = (e) => {
+    const clickedElement = e.target;
+    if (
+      mainContent.current &&
+      mainContent.current.contains(clickedElement) &&
+      isNavHeaderOpen
+    ) {
+      setIsNavHeaderOpen(false);
+    }
+  };
+
+  const handleMainContentScroll = () => {
+    if (mainContent.current && isNavHeaderOpen) {
       setIsNavHeaderOpen(false);
     }
   };
 
   useEffect(() => {
-    mainContent.current.addEventListener('click', () => handleMainContentClick);
+    // window click listener
+    window.addEventListener('click', handleMainContentClick);
+
+    // window scroll listener
+    window.addEventListener('scroll', handleMainContentScroll);
     return () => {
-      mainContent.current.removeEventListener('click', handleMainContentClick);
+      window.removeEventListener('click', handleMainContentClick);
+      window.removeEventListener('scroll', handleMainContentScroll);
     };
-  }, []);
+  });
 
   return (
     <div className="min-h-screen h-full relative bg-backgroundColor-primary">
