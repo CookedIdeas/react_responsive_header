@@ -2,7 +2,7 @@ import FakeDataGrid from '../components/FakeDataGrid';
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-10">
       <section>
         <h1 className="text-4xl sm:text-7xl ml-10">Welcome</h1>
         <div className="flex justify-end w-full">

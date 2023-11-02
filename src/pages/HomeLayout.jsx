@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 import { useEffect, useRef, useState } from 'react';
 
@@ -32,12 +32,21 @@ const HomeLayout = () => {
     }
   };
 
+  // enable/disable header automatic closing behavior
+  const [isClickBehaviorEnable, setIsClickBehaviorEnable] = useState(true);
+  const [isScrollBehaviorEnable, setIsScrollBehaviorEnable] = useState(true);
+
   useEffect(() => {
     // window click listener
-    window.addEventListener('click', handleMainContentClick);
+    if (isClickBehaviorEnable) {
+      window.addEventListener('click', handleMainContentClick);
+    }
 
     // window scroll listener
-    window.addEventListener('scroll', handleMainContentScroll);
+    if (isScrollBehaviorEnable) {
+      window.addEventListener('scroll', handleMainContentScroll);
+    }
+
     return () => {
       window.removeEventListener('click', handleMainContentClick);
       window.removeEventListener('scroll', handleMainContentScroll);
@@ -50,7 +59,39 @@ const HomeLayout = () => {
         isNavHeaderOpen={isNavHeaderOpen}
         setIsNavHeaderOpen={setIsNavHeaderOpen}
       />
-      <main ref={mainContent} className="my-8 mx-4 sm:mx-6 md:mx-8">
+      <main ref={mainContent} className="my-16 mx-4 sm:mx-6 md:mx-8">
+        {/* CHOOSE HEADER CLOSING BEHAVIOR */}
+        <div className="flex flex-col items-start gap-4 sm:hidden">
+          <div>
+            <input
+              type="checkbox"
+              id="header-option-click"
+              name="header-option-click"
+              checked={isClickBehaviorEnable}
+              value={isClickBehaviorEnable}
+              onChange={() => setIsClickBehaviorEnable(!isClickBehaviorEnable)}
+            />
+            <label htmlFor="header-option-click" className="pl-2">
+              Close header on click outside of header
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="header-option-scroll"
+              name="header-option-scroll"
+              checked={isScrollBehaviorEnable}
+              value={isScrollBehaviorEnable}
+              onChange={() =>
+                setIsScrollBehaviorEnable(!isScrollBehaviorEnable)
+              }
+            />
+            <label htmlFor="header-option-scroll" className="pl-2">
+              Close header on page scroll
+            </label>
+          </div>
+        </div>
         <Outlet />
       </main>
       <Footer />

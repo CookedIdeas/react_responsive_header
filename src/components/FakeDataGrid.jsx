@@ -4,8 +4,14 @@ const FakeDataGrid = () => {
   return (
     <div>
       <h2 className="text-primary uppercase text-center mt-16 text-2xl font-semibold">
-        Find someone
+        Find some dummy data
       </h2>
+      <p className="text-center my-6 ">
+        Data from{' '}
+        <a href="https://omatsuri.app/fake-data-generator" className="relative">
+          Omatsuri fake data generator
+        </a>
+      </p>
       <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 ">
         {fakeData.map((person) => {
           const { name, birthday, phone, zip, city, email, avatar } = person;

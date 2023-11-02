@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import { navlinks } from '../assets/navlinks';
-import BurgerMenu from './header/BurgerMenu';
+import { navlinks } from '../../assets/navlinks';
+import BurgerMenu from './BurgerMenu';
 
-import NavHeader from './header/NavHeader';
+import NavHeader from './NavHeader';
 
 const Header = ({ isNavHeaderOpen, setIsNavHeaderOpen }) => {
   return (
